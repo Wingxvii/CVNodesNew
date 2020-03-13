@@ -3,7 +3,6 @@
 
 #include <QtCore/QObject>
 #include <QtWidgets/QLabel>
-#include <analyzer/linegraph.h>
 #include <QPushButton>
 #include <QGridLayout>
 //<>><><<>><><<>//

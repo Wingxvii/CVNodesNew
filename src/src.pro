@@ -414,5 +414,4 @@ INSTALLS += target
 unix:!mac {
     metainfo.files = $$PWD/../shotcut.appdata.xml
     metainfo.path = $$PREFIX/share/metainfo
-    INSTALLS += qmlfiles
 }

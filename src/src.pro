@@ -14,14 +14,6 @@ win32:DEFINES += QT_STATIC
 
 SOURCES += main.cpp\
     mainwindow.cpp \
-    htmleditor/htmleditor.cpp \
-    htmleditor/highlighter.cpp \
-    jobs/abstractjob.cpp \
-    jobs/meltjob.cpp \
-    jobs/encodejob.cpp \
-    jobs/videoqualityjob.cpp \
-    jobs/ffprobejob.cpp \
-    jobs/ffmpegjob.cpp \
     events.cpp \
     analyzer/filternode.cpp \
     nodeeditor/calibrate.cpp \
@@ -100,14 +92,6 @@ SOURCES += main.cpp\
 
 
 HEADERS  += mainwindow.h \
-    htmleditor/htmleditor.h \
-    htmleditor/highlighter.h \
-    jobs/abstractjob.h \
-    jobs/meltjob.h \
-    jobs/encodejob.h \
-    jobs/videoqualityjob.h \
-    jobs/ffprobejob.h \
-    jobs/ffmpegjob.h \
     events.h \
     analyzer/filternode.h \
     nodeeditor/autoframeiterator.h \
@@ -203,8 +187,6 @@ HEADERS  += mainwindow.h \
 
 
 FORMS    += \
-    htmleditor/htmleditor.ui \
-    htmleditor/inserthtmldialog.ui \
     mainwindow.ui
 
 RESOURCES += \

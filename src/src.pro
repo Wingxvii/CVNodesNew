@@ -2,9 +2,9 @@ CONFIG   += link_prl
 
 CONFIG   += qwt
 
-QT       += widgets opengl xml network printsupport qml quick sql webkitwidgets
+QT       += widgets opengl xml network printsupport quick sql webkitwidgets
 QT       += multimedia websockets quickwidgets
-QT       += qml-private core-private quick-private gui-private
+QT       += core-private quick-private gui-private
 QT       += concurrent
 
 TARGET = shotcut
@@ -14,41 +14,14 @@ win32:DEFINES += QT_STATIC
 
 SOURCES += main.cpp\
     mainwindow.cpp \
-    models/playlistmodel.cpp \
-    mvcp/qconsole.cpp \
-    mvcp/mvcp_socket.cpp \
-    mvcp/meltedclipsmodel.cpp \
-    mvcp/meltedunitsmodel.cpp \
-    mvcp/mvcpthread.cpp \
-    mvcp/meltedplaylistmodel.cpp \
-    mvcp/meltedplaylistdock.cpp \
-    mvcp/meltedserverdock.cpp \
-    models/attachedfiltersmodel.cpp \
-    models/metadatamodel.cpp \
-    qmltypes/colorpickeritem.cpp \
-    qmltypes/colorwheelitem.cpp \
-    qmltypes/qmlapplication.cpp \
-    qmltypes/qmlfile.cpp \
-    qmltypes/qmlfilter.cpp \
-    qmltypes/qmlhtmleditor.cpp \
-    qmltypes/qmlmetadata.cpp \
-    qmltypes/timelineitems.cpp \
-    qmltypes/qmlprofile.cpp \
     htmleditor/htmleditor.cpp \
     htmleditor/highlighter.cpp \
-    models/multitrackmodel.cpp \
-    qmltypes/qmlutilities.cpp \
-    qmltypes/qmlview.cpp \
-    qmltypes/thumbnailprovider.cpp \
     jobs/abstractjob.cpp \
     jobs/meltjob.cpp \
     jobs/encodejob.cpp \
     jobs/videoqualityjob.cpp \
-    models/audiolevelstask.cpp \
     jobs/ffprobejob.cpp \
     jobs/ffmpegjob.cpp \
-    qmltypes/qmlproducer.cpp \
-    models/keyframesmodel.cpp \
     events.cpp \
     analyzer/filternode.cpp \
     nodeeditor/calibrate.cpp \
@@ -127,40 +100,14 @@ SOURCES += main.cpp\
 
 
 HEADERS  += mainwindow.h \
-    models/playlistmodel.h \
-    mvcp/qconsole.h \
-    mvcp/meltedclipsmodel.h \
-    mvcp/meltedunitsmodel.h \
-    mvcp/mvcpthread.h \
-    mvcp/meltedplaylistmodel.h \
-    mvcp/meltedplaylistdock.h \
-    mvcp/meltedserverdock.h \
-    models/attachedfiltersmodel.h \
-    models/metadatamodel.h \
-    qmltypes/colorpickeritem.h \
-    qmltypes/colorwheelitem.h \
-    qmltypes/qmlapplication.h \
-    qmltypes/qmlfile.h \
-    qmltypes/qmlfilter.h \
-    qmltypes/qmlhtmleditor.h \
-    qmltypes/qmlmetadata.h \
-    qmltypes/timelineitems.h \
-    qmltypes/qmlprofile.h \
     htmleditor/htmleditor.h \
     htmleditor/highlighter.h \
-    models/multitrackmodel.h \
-    qmltypes/qmlutilities.h \
-    qmltypes/qmlview.h \
-    qmltypes/thumbnailprovider.h \
     jobs/abstractjob.h \
     jobs/meltjob.h \
     jobs/encodejob.h \
     jobs/videoqualityjob.h \
-    models/audiolevelstask.h \
     jobs/ffprobejob.h \
     jobs/ffmpegjob.h \
-    qmltypes/qmlproducer.h \
-    models/keyframesmodel.h \
     events.h \
     analyzer/filternode.h \
     nodeeditor/autoframeiterator.h \
@@ -187,7 +134,6 @@ HEADERS  += mainwindow.h \
     nodeeditor/dynamic_framework/ConnectionState.hpp \
     nodeeditor/dynamic_framework/ConnectionStyle.hpp \
     nodeeditor/dynamic_framework/DataModelRegistry.hpp \
-    nodeeditor/dynamic_framework/Export.hpp \
     nodeeditor/dynamic_framework/FlowScene.hpp \
     nodeeditor/dynamic_framework/FlowView.hpp \
     nodeeditor/dynamic_framework/FlowViewStyle.hpp \
@@ -257,8 +203,6 @@ HEADERS  += mainwindow.h \
 
 
 FORMS    += \
-    mvcp/meltedserverdock.ui \
-    mvcp/meltedplaylistdock.ui \
     htmleditor/htmleditor.ui \
     htmleditor/inserthtmldialog.ui \
     mainwindow.ui
@@ -314,7 +258,7 @@ TRANSLATIONS += \
 
 
 DEFINES += NODE_EDITOR_SHARED
-INCLUDEPATH += ../CuteLogger/include ../mvcp
+INCLUDEPATH += ../CuteLogger/include
 INCLUDEPATH += "$$PWD/../nodeeditor/include"
 INCLUDEPATH += "$$PWD/../nodeeditor"
 INCLUDEPATH += "$$PWD/../opencv"
@@ -420,14 +364,14 @@ INCLUDEPATH += C:/qwt-6.1.4/include
 
 debug_and_release {
     build_pass:CONFIG(debug, debug|release) {
-        LIBS += -L../CuteLogger/debug -L../mvcp/debug
+        LIBS += -L../CuteLogger/debug
     } else {
-        LIBS += -L../CuteLogger/release -L../mvcp/release
+        LIBS += -L../CuteLogger/release
     }
 } else {
-    LIBS += -L../CuteLogger -L../mvcp
+    LIBS += -L../CuteLogger
 }
-LIBS += -lCuteLogger -lmvcp -lpthread
+LIBS += -lCuteLogger -lpthread
 
 isEmpty(SHOTCUT_VERSION) {
     !win32:SHOTCUT_VERSION = $$system(date "+%y.%m.%d")
@@ -484,10 +428,6 @@ win32:isEmpty(PREFIX) {
 unix:target.path = $$PREFIX/bin
 win32:target.path = $$PREFIX
 INSTALLS += target
-
-qmlfiles.files = $$PWD/qml
-qmlfiles.path = $$PREFIX/share/shotcut
-INSTALLS += qmlfiles
 
 unix:!mac {
     metainfo.files = $$PWD/../shotcut.appdata.xml

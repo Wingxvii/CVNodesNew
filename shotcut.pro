@@ -1,5 +1,5 @@
 TEMPLATE = subdirs
 CONFIG   += qwt
-SUBDIRS = CuteLogger mvcp src
+SUBDIRS = CuteLogger src
 cache()
-src.depends = CuteLogger mvcp
+src.depends = CuteLogger

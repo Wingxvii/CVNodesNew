@@ -27,7 +27,7 @@ std::set<float>::iterator Events::getEnd()
 
 //returns the specified event. returns null if it doesnt exist
 Events* EventContainer::getEvents(QString name, bool create)
-{    
+{
     if (events.size() > 0 && events.find(name) != events.end())
     {
         return events.at(name);

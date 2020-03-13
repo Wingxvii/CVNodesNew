@@ -16,7 +16,7 @@
 #include "analyzer\linkerwindow.h"
 #include "analyzer\imagewindow.h"
 #include "analyzer\videowindow.h"
-
+#include "events.h"
 
 namespace Ui {
 class MainWindow;

@@ -36,12 +36,9 @@ SOURCES += main.cpp\
     widgets/audiometerwidget.cpp \
     docks/recentdock.cpp \
     docks/encodedock.cpp \
-    dialogs/addencodepresetdialog.cpp \
     docks/jobsdock.cpp \
-    dialogs/textviewerdialog.cpp \
     models/playlistmodel.cpp \
     docks/playlistdock.cpp \
-    dialogs/durationdialog.cpp \
     mvcp/qconsole.cpp \
     mvcp/mvcp_socket.cpp \
     mvcp/meltedclipsmodel.cpp \
@@ -54,7 +51,6 @@ SOURCES += main.cpp\
     models/attachedfiltersmodel.cpp \
     models/metadatamodel.cpp \
     docks/filtersdock.cpp \
-    dialogs/customprofiledialog.cpp \
     qmltypes/colorpickeritem.cpp \
     qmltypes/colorwheelitem.cpp \
     qmltypes/qmlapplication.cpp \
@@ -74,14 +70,12 @@ SOURCES += main.cpp\
     qmltypes/qmlutilities.cpp \
     qmltypes/qmlview.cpp \
     qmltypes/thumbnailprovider.cpp \
-    commands/timelinecommands.cpp \
     widgets/lumamixtransition.cpp \
     widgets/directshowvideowidget.cpp \
     jobs/abstractjob.cpp \
     jobs/meltjob.cpp \
     jobs/encodejob.cpp \
     jobs/videoqualityjob.cpp \
-    commands/playlistcommands.cpp \
     docks/scopedock.cpp \
     controllers/scopecontroller.cpp \
     widgets/scopes/scopewidget.cpp \
@@ -93,7 +87,6 @@ SOURCES += main.cpp\
     widgets/audioscale.cpp \
     widgets/playlisttable.cpp \
     widgets/playlisticonview.cpp \
-    commands/undohelper.cpp \
     models/audiolevelstask.cpp \
     widgets/avfoundationproducerwidget.cpp \
     widgets/gdigrabwidget.cpp \
@@ -101,18 +94,11 @@ SOURCES += main.cpp\
     widgets/timelinepropertieswidget.cpp \
     jobs/ffprobejob.cpp \
     jobs/ffmpegjob.cpp \
-    dialogs/unlinkedfilesdialog.cpp \
-    dialogs/transcodedialog.cpp \
     docks/keyframesdock.cpp \
     qmltypes/qmlproducer.cpp \
     models/keyframesmodel.cpp \
     events.cpp \
-    dialogs/blacklist.cpp \
-    dialogs/filterlist.cpp \
-    analyzer/sensorwindow.cpp \
     analyzer/filternode.cpp \
-    analyzer/sensormanager.cpp \
-    analyzer/scrubeventmanager.cpp \
     nodeeditor/calibrate.cpp \
     nodeeditor/getcorners.cpp \
     nodeeditor/calibinfo.cpp \
@@ -184,7 +170,8 @@ SOURCES += main.cpp\
     nodeeditor/facecrop.cpp \
     nodeeditor/displayemotions.cpp \
     nodeeditor/graphemotion.cpp \
-    nodeeditor/emotionkeyframer.cpp
+    nodeeditor/emotionkeyframer.cpp \
+    events.cpp
 
 
 
@@ -212,12 +199,9 @@ HEADERS  += mainwindow.h \
     widgets/audiometerwidget.h \
     docks/recentdock.h \
     docks/encodedock.h \
-    dialogs/addencodepresetdialog.h \
     docks/jobsdock.h \
-    dialogs/textviewerdialog.h \
     models/playlistmodel.h \
     docks/playlistdock.h \
-    dialogs/durationdialog.h \
     mvcp/qconsole.h \
     mvcp/meltedclipsmodel.h \
     mvcp/meltedunitsmodel.h \
@@ -229,7 +213,6 @@ HEADERS  += mainwindow.h \
     models/attachedfiltersmodel.h \
     models/metadatamodel.h \
     docks/filtersdock.h \
-    dialogs/customprofiledialog.h \
     qmltypes/colorpickeritem.h \
     qmltypes/colorwheelitem.h \
     qmltypes/qmlapplication.h \
@@ -249,14 +232,12 @@ HEADERS  += mainwindow.h \
     qmltypes/qmlutilities.h \
     qmltypes/qmlview.h \
     qmltypes/thumbnailprovider.h \
-    commands/timelinecommands.h \
     widgets/lumamixtransition.h \
     widgets/directshowvideowidget.h \
     jobs/abstractjob.h \
     jobs/meltjob.h \
     jobs/encodejob.h \
     jobs/videoqualityjob.h \
-    commands/playlistcommands.h \
     docks/scopedock.h \
     controllers/scopecontroller.h \
     widgets/scopes/scopewidget.h \
@@ -268,7 +249,6 @@ HEADERS  += mainwindow.h \
     widgets/audioscale.h \
     widgets/playlisttable.h \
     widgets/playlisticonview.h \
-    commands/undohelper.h \
     models/audiolevelstask.h \
     widgets/avfoundationproducerwidget.h \
     widgets/gdigrabwidget.h \
@@ -276,17 +256,11 @@ HEADERS  += mainwindow.h \
     widgets/timelinepropertieswidget.h \
     jobs/ffprobejob.h \
     jobs/ffmpegjob.h \
-    dialogs/unlinkedfilesdialog.h \
-    dialogs/transcodedialog.h \
     docks/keyframesdock.h \
     qmltypes/qmlproducer.h \
     models/keyframesmodel.h \
     events.h \
-    dialogs/blacklist.h \
-    dialogs/filterlist.h \
-    analyzer/sensorwindow.h \
     analyzer/filternode.h \
-    analyzer/scrubeventmanager.h \
     nodeeditor/autoframeiterator.h \
     nodeeditor/calibinfo.h \
     nodeeditor/calibrate.h \
@@ -340,7 +314,6 @@ HEADERS  += mainwindow.h \
     nodeeditor/linkout.h \
     nodeeditor/debuggetcorners.h \
     analyzer/jsbuilder.h \
-    analyzer/sensormanager.h \
     analyzer/savedata.h \
     analyzer/consolewindow.h \
     analyzer/linkerwindow.h \
@@ -377,7 +350,8 @@ HEADERS  += mainwindow.h \
     nodeeditor/facecrop.h \
     nodeeditor/displayemotions.h \
     nodeeditor/graphemotion.h \
-    nodeeditor/emotionkeyframer.h
+    nodeeditor/emotionkeyframer.h \
+    events.h
 
 
 
@@ -401,14 +375,10 @@ FORMS    += \
     widgets/imageproducerwidget.ui \
     docks/recentdock.ui \
     docks/encodedock.ui \
-    dialogs/addencodepresetdialog.ui \
     docks/jobsdock.ui \
-    dialogs/textviewerdialog.ui \
     docks/playlistdock.ui \
-    dialogs/durationdialog.ui \
     mvcp/meltedserverdock.ui \
     mvcp/meltedplaylistdock.ui \
-    dialogs/customprofiledialog.ui \
     htmleditor/htmleditor.ui \
     htmleditor/inserthtmldialog.ui \
     widgets/webvfxproducer.ui \
@@ -419,8 +389,6 @@ FORMS    += \
     widgets/gdigrabwidget.ui \
     widgets/trackpropertieswidget.ui \
     widgets/timelinepropertieswidget.ui \
-    dialogs/unlinkedfilesdialog.ui \
-    dialogs/transcodedialog.ui \
     mainwindow.ui
 
 RESOURCES += \
@@ -654,6 +622,3 @@ unix:!mac {
     metainfo.path = $$PREFIX/share/metainfo
     INSTALLS += qmlfiles
 }
-
-DISTFILES += \
-    qml/views/sensors/sensorview.qml

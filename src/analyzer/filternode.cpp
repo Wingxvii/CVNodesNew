@@ -11,21 +11,6 @@
 #include "nodeeditor/outputdisplaymodel.h"
 
 
-//#include "nodeeditor/graphsourcedatamodel.h"
-//#include "nodeeditor/graphdisplaydatamodel.h"
-//#include "nodeeditor/minmodel.h"
-//#include "nodeeditor/maxmodel.h"
-//#include "nodeeditor/additive.h"
-//#include "nodeeditor/backgroundsubtraction.h"
-//#include "nodeeditor/debuggetcorners.h"
-//#include "nodeeditor/checkerboardpointsbuffer.h"
-//#include "nodeeditor/tohsv.h"
-//#include "nodeeditor/videothreshold.h"
-//#include "nodeeditor/erodeimage.h"
-//#include "nodeeditor/dilateimage.h"
-//#include "nodeeditor/blobfilternode.h"
-
-
 #include "nodeeditor/videosourcedatamodel.h"
 #include "nodeeditor/frameiterator.h"
 #include "nodeeditor/autoframeiterator.h"

@@ -99,7 +99,6 @@ SOURCES += main.cpp\
     widgets/playlisticonview.cpp \
     commands/undohelper.cpp \
     models/audiolevelstask.cpp \
-    mltxmlchecker.cpp \
     widgets/avfoundationproducerwidget.cpp \
     widgets/gdigrabwidget.cpp \
     widgets/trackpropertieswidget.cpp \
@@ -281,7 +280,6 @@ HEADERS  += mainwindow.h \
     commands/undohelper.h \
     models/audiolevelstask.h \
     shotcut_mlt_properties.h \
-    mltxmlchecker.h \
     widgets/avfoundationproducerwidget.h \
     widgets/gdigrabwidget.h \
     widgets/trackpropertieswidget.h \

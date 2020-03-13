@@ -14,26 +14,6 @@ win32:DEFINES += QT_STATIC
 
 SOURCES += main.cpp\
     mainwindow.cpp \
-    controllers/filtercontroller.cpp \
-    widgets/plasmawidget.cpp \
-    widgets/lissajouswidget.cpp \
-    widgets/isingwidget.cpp \
-    widgets/video4linuxwidget.cpp \
-    widgets/colorproducerwidget.cpp \
-    widgets/decklinkproducerwidget.cpp \
-    widgets/networkproducerwidget.cpp \
-    widgets/colorbarswidget.cpp \
-    widgets/countproducerwidget.cpp \
-    widgets/noisewidget.cpp \
-    widgets/pulseaudiowidget.cpp \
-    widgets/jackproducerwidget.cpp \
-    widgets/toneproducerwidget.cpp \
-    widgets/x11grabwidget.cpp \
-    widgets/servicepresetwidget.cpp \
-    widgets/avformatproducerwidget.cpp \
-    widgets/imageproducerwidget.cpp \
-    widgets/timespinbox.cpp \
-    widgets/audiometerwidget.cpp \
     docks/recentdock.cpp \
     docks/encodedock.cpp \
     docks/jobsdock.cpp \
@@ -47,7 +27,6 @@ SOURCES += main.cpp\
     mvcp/meltedplaylistmodel.cpp \
     mvcp/meltedplaylistdock.cpp \
     mvcp/meltedserverdock.cpp \
-    widgets/colorwheel.cpp \
     models/attachedfiltersmodel.cpp \
     models/metadatamodel.cpp \
     docks/filtersdock.cpp \
@@ -62,36 +41,17 @@ SOURCES += main.cpp\
     qmltypes/qmlprofile.cpp \
     htmleditor/htmleditor.cpp \
     htmleditor/highlighter.cpp \
-    widgets/lineeditclear.cpp \
-    widgets/webvfxproducer.cpp \
-    widgets/gltestwidget.cpp \
     models/multitrackmodel.cpp \
     docks/timelinedock.cpp \
     qmltypes/qmlutilities.cpp \
     qmltypes/qmlview.cpp \
     qmltypes/thumbnailprovider.cpp \
-    widgets/lumamixtransition.cpp \
-    widgets/directshowvideowidget.cpp \
     jobs/abstractjob.cpp \
     jobs/meltjob.cpp \
     jobs/encodejob.cpp \
     jobs/videoqualityjob.cpp \
     docks/scopedock.cpp \
-    controllers/scopecontroller.cpp \
-    widgets/scopes/scopewidget.cpp \
-    widgets/scopes/audioloudnessscopewidget.cpp \
-    widgets/scopes/audiopeakmeterscopewidget.cpp \
-    widgets/scopes/audiospectrumscopewidget.cpp \
-    widgets/scopes/audiowaveformscopewidget.cpp \
-    widgets/scopes/videowaveformscopewidget.cpp \
-    widgets/audioscale.cpp \
-    widgets/playlisttable.cpp \
-    widgets/playlisticonview.cpp \
     models/audiolevelstask.cpp \
-    widgets/avfoundationproducerwidget.cpp \
-    widgets/gdigrabwidget.cpp \
-    widgets/trackpropertieswidget.cpp \
-    widgets/timelinepropertieswidget.cpp \
     jobs/ffprobejob.cpp \
     jobs/ffmpegjob.cpp \
     docks/keyframesdock.cpp \
@@ -150,7 +110,6 @@ SOURCES += main.cpp\
     nodeeditor/autotrackobject.cpp \
     nodeeditor/displaytrackedobject.cpp \
     nodeeditor/videoobjectstats.cpp \
-    nodeeditor/outputdisplaymodel.cpp \
     nodeeditor/regionofintrest.cpp \
     nodeeditor/resizevideonode.cpp \
     nodeeditor/perspectiverectifynode.cpp \
@@ -176,27 +135,6 @@ SOURCES += main.cpp\
 
 
 HEADERS  += mainwindow.h \
-    controllers/filtercontroller.h \
-    widgets/plasmawidget.h \
-    widgets/lissajouswidget.h \
-    widgets/isingwidget.h \
-    widgets/video4linuxwidget.h \
-    widgets/colorproducerwidget.h \
-    widgets/decklinkproducerwidget.h \
-    widgets/networkproducerwidget.h \
-    widgets/colorbarswidget.h \
-    widgets/countproducerwidget.h \
-    widgets/noisewidget.h \
-    widgets/pulseaudiowidget.h \
-    widgets/jackproducerwidget.h \
-    widgets/toneproducerwidget.h \
-    widgets/x11grabwidget.h \
-    widgets/servicepresetwidget.h \
-    widgets/avformatproducerwidget.h \
-    widgets/imageproducerwidget.h \
-    widgets/timespinbox.h \
-    widgets/iecscale.h \
-    widgets/audiometerwidget.h \
     docks/recentdock.h \
     docks/encodedock.h \
     docks/jobsdock.h \
@@ -209,7 +147,6 @@ HEADERS  += mainwindow.h \
     mvcp/meltedplaylistmodel.h \
     mvcp/meltedplaylistdock.h \
     mvcp/meltedserverdock.h \
-    widgets/colorwheel.h \
     models/attachedfiltersmodel.h \
     models/metadatamodel.h \
     docks/filtersdock.h \
@@ -224,36 +161,17 @@ HEADERS  += mainwindow.h \
     qmltypes/qmlprofile.h \
     htmleditor/htmleditor.h \
     htmleditor/highlighter.h \
-    widgets/lineeditclear.h \
-    widgets/webvfxproducer.h \
-    widgets/gltestwidget.h \
     models/multitrackmodel.h \
     docks/timelinedock.h \
     qmltypes/qmlutilities.h \
     qmltypes/qmlview.h \
     qmltypes/thumbnailprovider.h \
-    widgets/lumamixtransition.h \
-    widgets/directshowvideowidget.h \
     jobs/abstractjob.h \
     jobs/meltjob.h \
     jobs/encodejob.h \
     jobs/videoqualityjob.h \
     docks/scopedock.h \
-    controllers/scopecontroller.h \
-    widgets/scopes/scopewidget.h \
-    widgets/scopes/audioloudnessscopewidget.h \
-    widgets/scopes/audiopeakmeterscopewidget.h \
-    widgets/scopes/audiospectrumscopewidget.h \
-    widgets/scopes/audiowaveformscopewidget.h \
-    widgets/scopes/videowaveformscopewidget.h \
-    widgets/audioscale.h \
-    widgets/playlisttable.h \
-    widgets/playlisticonview.h \
     models/audiolevelstask.h \
-    widgets/avfoundationproducerwidget.h \
-    widgets/gdigrabwidget.h \
-    widgets/trackpropertieswidget.h \
-    widgets/timelinepropertieswidget.h \
     jobs/ffprobejob.h \
     jobs/ffmpegjob.h \
     docks/keyframesdock.h \
@@ -329,7 +247,6 @@ HEADERS  += mainwindow.h \
     nodeeditor/autotrackobject.h \
     nodeeditor/displaytrackedobject.h \
     nodeeditor/videoobjectstats.h \
-    nodeeditor/outputdisplaymodel.h \
     nodeeditor/regionofintrest.h \
     nodeeditor/resizevideonode.h \
     nodeeditor/perspectiverectifynode.h \
@@ -356,23 +273,6 @@ HEADERS  += mainwindow.h \
 
 
 FORMS    += \
-    widgets/plasmawidget.ui \
-    widgets/lissajouswidget.ui \
-    widgets/isingwidget.ui \
-    widgets/video4linuxwidget.ui \
-    widgets/colorproducerwidget.ui \
-    widgets/decklinkproducerwidget.ui \
-    widgets/networkproducerwidget.ui \
-    widgets/colorbarswidget.ui \
-    widgets/countproducerwidget.ui \
-    widgets/noisewidget.ui \
-    widgets/pulseaudiowidget.ui \
-    widgets/jackproducerwidget.ui \
-    widgets/toneproducerwidget.ui \
-    widgets/x11grabwidget.ui \
-    widgets/servicepresetwidget.ui \
-    widgets/avformatproducerwidget.ui \
-    widgets/imageproducerwidget.ui \
     docks/recentdock.ui \
     docks/encodedock.ui \
     docks/jobsdock.ui \
@@ -381,14 +281,7 @@ FORMS    += \
     mvcp/meltedplaylistdock.ui \
     htmleditor/htmleditor.ui \
     htmleditor/inserthtmldialog.ui \
-    widgets/webvfxproducer.ui \
     docks/timelinedock.ui \
-    widgets/lumamixtransition.ui \
-    widgets/directshowvideowidget.ui \
-    widgets/avfoundationproducerwidget.ui \
-    widgets/gdigrabwidget.ui \
-    widgets/trackpropertieswidget.ui \
-    widgets/timelinepropertieswidget.ui \
     mainwindow.ui
 
 RESOURCES += \

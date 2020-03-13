@@ -8,8 +8,6 @@
 #include <nodes/Node>
 
 #include "nodeeditor/videooutputmodel.h"
-#include "nodeeditor/outputdisplaymodel.h"
-
 
 #include "nodeeditor/videosourcedatamodel.h"
 #include "nodeeditor/frameiterator.h"
@@ -62,8 +60,8 @@ FilterNode::FilterNode(Events* events, QWidget* parent) :
     setLayout(layout);
 
     //create the output display sensor
-    outputSensor = std::make_shared<DataModelRegistry>();
-    outputSensor->registerModel<OutputDisplayModel>("Output");
+    //outputSensor = std::make_shared<DataModelRegistry>();
+    //outputSensor->registerModel<OutputDisplayModel>("Output");
 
     //create the qt element of the editor
     scene = new FlowScene(outputSensor);
@@ -155,11 +153,11 @@ FilterNode::FilterNode(Events* events, QWidget* parent) :
     layout->addWidget(new FlowView(scene));
 
 
-    connect(scene, &FlowScene::nodeCreated, this, &FilterNode::onCreatedNode);
-    connect(scene, &FlowScene::nodeDeleted, this, &FilterNode::onDeletedNode);
+    //connect(scene, &FlowScene::nodeCreated, this, &FilterNode::onCreatedNode);
+    //connect(scene, &FlowScene::nodeDeleted, this, &FilterNode::onDeletedNode);
 }
 
-
+/*
 void FilterNode::onDeletedNode(QtNodes::Node &n)
 {
     const OutputDisplayModel* graphOutput = dynamic_cast<const OutputDisplayModel*>(n.nodeDataModel());
@@ -209,6 +207,8 @@ void FilterNode::onDeleteEvents(std::vector<float> data)
         events->removeEvent(it);
     }
 }
+
+*/
 
 FilterNode::~FilterNode()
 {

@@ -14,11 +14,7 @@ win32:DEFINES += QT_STATIC
 
 SOURCES += main.cpp\
     mainwindow.cpp \
-    docks/recentdock.cpp \
-    docks/encodedock.cpp \
-    docks/jobsdock.cpp \
     models/playlistmodel.cpp \
-    docks/playlistdock.cpp \
     mvcp/qconsole.cpp \
     mvcp/mvcp_socket.cpp \
     mvcp/meltedclipsmodel.cpp \
@@ -29,7 +25,6 @@ SOURCES += main.cpp\
     mvcp/meltedserverdock.cpp \
     models/attachedfiltersmodel.cpp \
     models/metadatamodel.cpp \
-    docks/filtersdock.cpp \
     qmltypes/colorpickeritem.cpp \
     qmltypes/colorwheelitem.cpp \
     qmltypes/qmlapplication.cpp \
@@ -42,7 +37,6 @@ SOURCES += main.cpp\
     htmleditor/htmleditor.cpp \
     htmleditor/highlighter.cpp \
     models/multitrackmodel.cpp \
-    docks/timelinedock.cpp \
     qmltypes/qmlutilities.cpp \
     qmltypes/qmlview.cpp \
     qmltypes/thumbnailprovider.cpp \
@@ -50,11 +44,9 @@ SOURCES += main.cpp\
     jobs/meltjob.cpp \
     jobs/encodejob.cpp \
     jobs/videoqualityjob.cpp \
-    docks/scopedock.cpp \
     models/audiolevelstask.cpp \
     jobs/ffprobejob.cpp \
     jobs/ffmpegjob.cpp \
-    docks/keyframesdock.cpp \
     qmltypes/qmlproducer.cpp \
     models/keyframesmodel.cpp \
     events.cpp \
@@ -135,11 +127,7 @@ SOURCES += main.cpp\
 
 
 HEADERS  += mainwindow.h \
-    docks/recentdock.h \
-    docks/encodedock.h \
-    docks/jobsdock.h \
     models/playlistmodel.h \
-    docks/playlistdock.h \
     mvcp/qconsole.h \
     mvcp/meltedclipsmodel.h \
     mvcp/meltedunitsmodel.h \
@@ -149,7 +137,6 @@ HEADERS  += mainwindow.h \
     mvcp/meltedserverdock.h \
     models/attachedfiltersmodel.h \
     models/metadatamodel.h \
-    docks/filtersdock.h \
     qmltypes/colorpickeritem.h \
     qmltypes/colorwheelitem.h \
     qmltypes/qmlapplication.h \
@@ -162,7 +149,6 @@ HEADERS  += mainwindow.h \
     htmleditor/htmleditor.h \
     htmleditor/highlighter.h \
     models/multitrackmodel.h \
-    docks/timelinedock.h \
     qmltypes/qmlutilities.h \
     qmltypes/qmlview.h \
     qmltypes/thumbnailprovider.h \
@@ -170,11 +156,9 @@ HEADERS  += mainwindow.h \
     jobs/meltjob.h \
     jobs/encodejob.h \
     jobs/videoqualityjob.h \
-    docks/scopedock.h \
     models/audiolevelstask.h \
     jobs/ffprobejob.h \
     jobs/ffmpegjob.h \
-    docks/keyframesdock.h \
     qmltypes/qmlproducer.h \
     models/keyframesmodel.h \
     events.h \
@@ -273,15 +257,10 @@ HEADERS  += mainwindow.h \
 
 
 FORMS    += \
-    docks/recentdock.ui \
-    docks/encodedock.ui \
-    docks/jobsdock.ui \
-    docks/playlistdock.ui \
     mvcp/meltedserverdock.ui \
     mvcp/meltedplaylistdock.ui \
     htmleditor/htmleditor.ui \
     htmleditor/inserthtmldialog.ui \
-    docks/timelinedock.ui \
     mainwindow.ui
 
 RESOURCES += \

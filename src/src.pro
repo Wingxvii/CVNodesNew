@@ -29,7 +29,6 @@ SOURCES += main.cpp\
     widgets/jackproducerwidget.cpp \
     widgets/toneproducerwidget.cpp \
     widgets/x11grabwidget.cpp \
-    player.cpp \
     widgets/servicepresetwidget.cpp \
     widgets/avformatproducerwidget.cpp \
     widgets/imageproducerwidget.cpp \
@@ -67,7 +66,6 @@ SOURCES += main.cpp\
     qmltypes/qmlprofile.cpp \
     htmleditor/htmleditor.cpp \
     htmleditor/highlighter.cpp \
-    settings.cpp \
     widgets/lineeditclear.cpp \
     widgets/webvfxproducer.cpp \
     widgets/gltestwidget.cpp \
@@ -77,7 +75,6 @@ SOURCES += main.cpp\
     qmltypes/qmlview.cpp \
     qmltypes/thumbnailprovider.cpp \
     commands/timelinecommands.cpp \
-    util.cpp \
     widgets/lumamixtransition.cpp \
     widgets/directshowvideowidget.cpp \
     jobs/abstractjob.cpp \
@@ -93,7 +90,6 @@ SOURCES += main.cpp\
     widgets/scopes/audiospectrumscopewidget.cpp \
     widgets/scopes/audiowaveformscopewidget.cpp \
     widgets/scopes/videowaveformscopewidget.cpp \
-    sharedframe.cpp \
     widgets/audioscale.cpp \
     widgets/playlisttable.cpp \
     widgets/playlisticonview.cpp \
@@ -208,7 +204,6 @@ HEADERS  += mainwindow.h \
     widgets/jackproducerwidget.h \
     widgets/toneproducerwidget.h \
     widgets/x11grabwidget.h \
-    player.h \
     widgets/servicepresetwidget.h \
     widgets/avformatproducerwidget.h \
     widgets/imageproducerwidget.h \
@@ -230,7 +225,6 @@ HEADERS  += mainwindow.h \
     mvcp/meltedplaylistmodel.h \
     mvcp/meltedplaylistdock.h \
     mvcp/meltedserverdock.h \
-    transportcontrol.h \
     widgets/colorwheel.h \
     models/attachedfiltersmodel.h \
     models/metadatamodel.h \
@@ -247,7 +241,6 @@ HEADERS  += mainwindow.h \
     qmltypes/qmlprofile.h \
     htmleditor/htmleditor.h \
     htmleditor/highlighter.h \
-    settings.h \
     widgets/lineeditclear.h \
     widgets/webvfxproducer.h \
     widgets/gltestwidget.h \
@@ -257,7 +250,6 @@ HEADERS  += mainwindow.h \
     qmltypes/qmlview.h \
     qmltypes/thumbnailprovider.h \
     commands/timelinecommands.h \
-    util.h \
     widgets/lumamixtransition.h \
     widgets/directshowvideowidget.h \
     jobs/abstractjob.h \
@@ -273,13 +265,11 @@ HEADERS  += mainwindow.h \
     widgets/scopes/audiospectrumscopewidget.h \
     widgets/scopes/audiowaveformscopewidget.h \
     widgets/scopes/videowaveformscopewidget.h \
-    sharedframe.h \
     widgets/audioscale.h \
     widgets/playlisttable.h \
     widgets/playlisticonview.h \
     commands/undohelper.h \
     models/audiolevelstask.h \
-    shotcut_mlt_properties.h \
     widgets/avfoundationproducerwidget.h \
     widgets/gdigrabwidget.h \
     widgets/trackpropertieswidget.h \
@@ -348,7 +338,6 @@ HEADERS  += mainwindow.h \
     analyzer/linkmanager.h \
     nodeeditor/linkin.h \
     nodeeditor/linkout.h \
-    scripter.h \
     nodeeditor/debuggetcorners.h \
     analyzer/jsbuilder.h \
     analyzer/sensormanager.h \

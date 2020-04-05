@@ -3,7 +3,6 @@ CONFIG   += link_prl
 CONFIG   += qwt
 CONFIG   += c++11
 
-
 QT       += widgets opengl xml network printsupport quick sql
 QT       += multimedia websockets quickwidgets
 QT       += core-private quick-private gui-private
@@ -92,7 +91,6 @@ SOURCES += main.cpp\
 
 
 HEADERS  += mainwindow.h \
-    events.h \
     analyzer/filternode.h \
     nodeeditor/autoframeiterator.h \
     nodeeditor/calibinfo.h \
@@ -181,8 +179,6 @@ HEADERS  += mainwindow.h \
     nodeeditor/displayemotions.h \
     nodeeditor/graphemotion.h \
     nodeeditor/emotionkeyframer.h \
-    events.h
-
 
 
 FORMS    += \
@@ -202,6 +198,8 @@ INCLUDEPATH += "$$PWD/../nodeeditor/include"
 INCLUDEPATH += "$$PWD/../nodeeditor"
 INCLUDEPATH += "$$PWD/../opencv"
 INCLUDEPATH += "$$PWD/../opencv/opencv2"
+
+##qwt include
 INCLUDEPATH += "$$PWD/../Qwt-6.1.4/include"
 
 

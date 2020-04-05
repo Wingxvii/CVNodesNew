@@ -65,6 +65,7 @@ public:
     registerModelImpl<ModelType>(std::move(creator), category);
   }
 
+
   template<typename ModelType>
   void registerModel(QString const &category = "Nodes")
   {

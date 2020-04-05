@@ -1,8 +1,10 @@
 CONFIG   += link_prl
 
 CONFIG   += qwt
+CONFIG   += c++11
 
-QT       += widgets opengl xml network printsupport quick sql webkitwidgets
+
+QT       += widgets opengl xml network printsupport quick sql
 QT       += multimedia websockets quickwidgets
 QT       += core-private quick-private gui-private
 QT       += concurrent
@@ -14,7 +16,6 @@ win32:DEFINES += QT_STATIC
 
 SOURCES += main.cpp\
     mainwindow.cpp \
-    events.cpp \
     analyzer/filternode.cpp \
     nodeeditor/calibrate.cpp \
     nodeeditor/getcorners.cpp \
@@ -86,8 +87,7 @@ SOURCES += main.cpp\
     nodeeditor/facecrop.cpp \
     nodeeditor/displayemotions.cpp \
     nodeeditor/graphemotion.cpp \
-    nodeeditor/emotionkeyframer.cpp \
-    events.cpp
+    nodeeditor/emotionkeyframer.cpp
 
 
 
@@ -134,7 +134,6 @@ HEADERS  += mainwindow.h \
     nodeeditor/dynamic_framework/NodeStyle.hpp \
     nodeeditor/dynamic_framework/PortType.hpp \
     nodeeditor/dynamic_framework/Properties.hpp \
-    nodeeditor/dynamic_framework/QStringStdHash.hpp \
     nodeeditor/dynamic_framework/QUuidStdHash.hpp \
     nodeeditor/dynamic_framework/Serializable.hpp \
     nodeeditor/dynamic_framework/Style.hpp \
@@ -195,59 +194,19 @@ RESOURCES += \
 
 OTHER_FILES += \
     ../COPYING \
-    shotcut.rc \
-    ../scripts/build-shotcut.sh \
-    ../icons/shotcut.icns \
-    ../scripts/shotcut.nsi \
-    ../Info.plist \
-    ../icons/dark/index.theme \
-    ../icons/light/index.theme \
-    ../snap/snapcraft.yaml \
-    ../snap/setup/gui/shotcut.desktop \
-    ../shotcut.appdata.xml
-
-TRANSLATIONS += \
-    ../translations/shotcut_ca.ts \
-    ../translations/shotcut_cs.ts \
-    ../translations/shotcut_da.ts \
-    ../translations/shotcut_de.ts \
-    ../translations/shotcut_el.ts \
-    ../translations/shotcut_en.ts \
-    ../translations/shotcut_es.ts \
-    ../translations/shotcut_et.ts \
-    ../translations/shotcut_fi.ts \
-    ../translations/shotcut_fr.ts \
-    ../translations/shotcut_gd.ts \
-    ../translations/shotcut_hu.ts \
-    ../translations/shotcut_it.ts \
-    ../translations/shotcut_ja.ts \
-    ../translations/shotcut_nb.ts \
-    ../translations/shotcut_ne.ts \
-    ../translations/shotcut_nl.ts \
-    ../translations/shotcut_oc.ts \
-    ../translations/shotcut_pl.ts \
-    ../translations/shotcut_pt_BR.ts \
-    ../translations/shotcut_pt_PT.ts \
-    ../translations/shotcut_ru.ts \
-    ../translations/shotcut_sk.ts \
-    ../translations/shotcut_sl.ts \
-    ../translations/shotcut_tr.ts \
-    ../translations/shotcut_uk.ts \
-    ../translations/shotcut_zh_CN.ts \
-    ../translations/shotcut_zh_TW.ts
 
 #node editor includes
-
-
 DEFINES += NODE_EDITOR_SHARED
 INCLUDEPATH += ../CuteLogger/include
 INCLUDEPATH += "$$PWD/../nodeeditor/include"
 INCLUDEPATH += "$$PWD/../nodeeditor"
 INCLUDEPATH += "$$PWD/../opencv"
 INCLUDEPATH += "$$PWD/../opencv/opencv2"
+INCLUDEPATH += "$$PWD/../Qwt-6.1.4/include"
+
 
 CONFIG(debug, debug|release) {
-LIBS += "$$PWD/../opencv/bin/libopencv_aruco411d.dll"
+LIBS += "$$PWD/../Qwt-6.1.4/lib/qwtd.dll"
 LIBS += "$$PWD/../opencv/bin/libopencv_bgsegm411d.dll"
 LIBS += "$$PWD/../opencv/bin/libopencv_bioinspired411d.dll"
 LIBS += "$$PWD/../opencv/bin/libopencv_calib3d411d.dll"
@@ -293,7 +252,7 @@ LIBS += "$$PWD/../opencv/bin/libopencv_ximgproc411d.dll"
 LIBS += "$$PWD/../opencv/bin/libopencv_xobjdetect411d.dll"
 LIBS += "$$PWD/../opencv/bin/libopencv_xphoto411d.dll"
 }else{
-LIBS += "$$PWD/../opencv/bin/libopencv_aruco411.dll"
+LIBS += "$$PWD/../Qwt-6.1.4/lib/qwt.dll"
 LIBS += "$$PWD/../opencv/bin/libopencv_bgsegm411.dll"
 LIBS += "$$PWD/../opencv/bin/libopencv_bioinspired411.dll"
 LIBS += "$$PWD/../opencv/bin/libopencv_calib3d411.dll"
@@ -340,10 +299,6 @@ LIBS += "$$PWD/../opencv/bin/libopencv_xobjdetect411.dll"
 LIBS += "$$PWD/../opencv/bin/libopencv_xphoto411.dll"
 }
 
-INCLUDEPATH += C:/qwt-6.1.4/include
-
-#LIBS += "$$PWD/../nodeeditor/NodeEditor.dll"
-
 debug_and_release {
     build_pass:CONFIG(debug, debug|release) {
         LIBS += -L../CuteLogger/debug
@@ -355,63 +310,10 @@ debug_and_release {
 }
 LIBS += -lCuteLogger -lpthread
 
-isEmpty(SHOTCUT_VERSION) {
-    !win32:SHOTCUT_VERSION = $$system(date "+%y.%m.%d")
-     win32:SHOTCUT_VERSION = adhoc
-}
-DEFINES += SHOTCUT_VERSION=\\\"$$SHOTCUT_VERSION\\\"
-VERSION = $$SHOTCUT_VERSION
-
-
-mac {
-    TARGET = Shotcut
-    ICON = ../icons/shotcut.icns
-    QMAKE_INFO_PLIST = ../Info.plist
-    INCLUDEPATH += $$[QT_INSTALL_HEADERS]
-
-    # QMake from Qt 5.1.0 on OSX is messing with the environment in which it runs
-    # pkg-config such that the PKG_CONFIG_PATH env var is not set.
-    isEmpty(MLT_PREFIX) {
-        MLT_PREFIX = /opt/local
-    }
-    INCLUDEPATH += $$MLT_PREFIX/include/mlt++
-    INCLUDEPATH += $$MLT_PREFIX/include/mlt
-    LIBS += -L$$MLT_PREFIX/lib -lmlt++ -lmlt
-}
-win32 {
-    CONFIG += windows rtti
-    isEmpty(MLT_PATH) {
-        message("MLT_PATH not set; using ..\\..\\... You can change this with 'qmake MLT_PATH=...'")
-        MLT_PATH = ..\\..\\..
-    }
-    INCLUDEPATH += $$MLT_PATH\\include\\mlt++ $$MLT_PATH\\include\\mlt
-    LIBS += -L$$MLT_PATH\\lib -lmlt++ -lmlt -lopengl32
-    CONFIG(debug, debug|release) {
-        INCLUDEPATH += $$PWD/../drmingw/include
-        LIBS += -L$$PWD/../drmingw/x64/lib -lexchndl
-    }
-    RC_FILE = shotcut.rc
-}
-unix:!mac {
-    QT += x11extras
-    CONFIG += link_pkgconfig
-    PKGCONFIG += mlt++
-    LIBS += -lX11
-}
-
 unix:!mac:isEmpty(PREFIX) {
     message("Install PREFIX not set; using /usr/local. You can change this with 'qmake PREFIX=...'")
     PREFIX = /usr/local
 }
-win32:isEmpty(PREFIX) {
-    message("Install PREFIX not set; using C:\\Projects\\Shotcut. You can change this with 'qmake PREFIX=...'")
-    PREFIX = C:\\Projects\\Shotcut
-}
 unix:target.path = $$PREFIX/bin
 win32:target.path = $$PREFIX
 INSTALLS += target
-
-unix:!mac {
-    metainfo.files = $$PWD/../shotcut.appdata.xml
-    metainfo.path = $$PREFIX/share/metainfo
-}

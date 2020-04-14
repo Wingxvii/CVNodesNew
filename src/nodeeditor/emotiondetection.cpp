@@ -1,3 +1,4 @@
+/*
 #include "emotiondetection.h"
 #include <iostream>
 #include <fstream>
@@ -204,3 +205,4 @@ void EmotionDetection::ShowContextMenu(const QPoint &pos)
 
 
 }
+*/

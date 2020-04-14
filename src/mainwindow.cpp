@@ -192,8 +192,7 @@ void MainWindow::newSlot()
     NodeEditorContainer *container = new NodeEditorContainer();
     container->name = name;
     container->index = nodeWindowList.size()-1;
-    container->events = new Events();                      //this doesnt do anything yet
-    container->editor = new FilterNode(container->events);
+    container->editor = new FilterNode();
 
     //then add a tab
     nodeEditorWindow->addTab(container->editor, container->name);
@@ -209,8 +208,7 @@ void MainWindow::openSlot()
     NodeEditorContainer *container = new NodeEditorContainer();
     container->name = "Opening File...";
     container->index = nodeWindowList.size()-1;
-    container->events = new Events();                      //this doesnt do anything yet
-    container->editor = new FilterNode(container->events);
+    container->editor = new FilterNode();
 
     //then add a tab
     nodeEditorWindow->addTab(container->editor, container->name);

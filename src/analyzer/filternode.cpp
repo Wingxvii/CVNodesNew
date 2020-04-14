@@ -50,11 +50,9 @@
 #include "nodeeditor/graphemotion.h"
 #include "nodeeditor/emotionkeyframer.h"
 
-FilterNode::FilterNode(Events* events, QWidget* parent) :
+FilterNode::FilterNode( QWidget* parent) :
     QWidget(parent)
 {
-    this->events = events;
-
     //setup layout
     layout = new QHBoxLayout();
     setLayout(layout);
@@ -132,7 +130,7 @@ FilterNode::FilterNode(Events* events, QWidget* parent) :
     final->registerModel<CascadeDetect>("Detectors");
     final->registerModel<AutoTrackObject>("Detectors");
     final->registerModel<AutoFindFeatures>("Detectors");
-    final->registerModel<EmotionDetection>("Detectors");
+    //final->registerModel<EmotionDetection>("Detectors");
 
     final->registerModel<DisplayDetection>("Analyzers");
     final->registerModel<DisplayTrackedObject>("Analyzers");
@@ -147,7 +145,7 @@ FilterNode::FilterNode(Events* events, QWidget* parent) :
     final->registerModel<EmotionKeyframer>("Classifer");
 
     final->registerModel<DebugGetCorners>("Debug");
-    final->registerModel<TrainEmotionModel>("Debug");
+    //final->registerModel<TrainEmotionModel>("Debug");
 
     scene->setRegistry(final);
     layout->addWidget(new FlowView(scene));

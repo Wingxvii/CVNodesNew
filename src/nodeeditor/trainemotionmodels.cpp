@@ -1,4 +1,5 @@
-#include "trainemotionmodels.h"
+/*
+ * #include "trainemotionmodels.h"
 #include <QFileDialog>
 #include <opencv2/video.hpp>
 
@@ -151,7 +152,7 @@ void TrainEmotionModel::multiThreadedProcess()
     vector<int> correct = {0,0,0,0,0,0,0};
     vector<int> incorrect = {0,0,0,0,0,0,0};
 
-
+*/
 /*
     LOG_JOHN() << "Begin Training1";
     fishface = face::FisherFaceRecognizer::create();
@@ -179,7 +180,7 @@ void TrainEmotionModel::multiThreadedProcess()
     lbphface->save(path.toStdString());
     LOG_JOHN() << "Saved";
 */
-
+/*
     for (unsigned int counter = 0; counter < testingData.size(); counter++) {
         int predictedLabel = -1;
         double confidence = 0.0;
@@ -281,7 +282,7 @@ void TrainEmotionModel::multiThreadedProcess()
     LOG_JOHN() << "Neutral: " + QString::number((100*correct[6])/(correct[6] + incorrect[6])) + "% correct";
 
 
-
+*/
 /*
     if((100*correct)/(correct + incorrect) > rateThreshold){
         QString path ="C:/projects/Shotcut/src/shotcut/opencv/deeplearningdata/emotion/ModelsImproved/" + QString::number((100*correct)/(correct + incorrect))  + "-" + QString::number(coun) + ".yml";
@@ -290,7 +291,7 @@ void TrainEmotionModel::multiThreadedProcess()
         coun++;
     }
 */
-
+/*
 }
 
 void TrainEmotionModel::multiThreadedFinished()
@@ -298,4 +299,4 @@ void TrainEmotionModel::multiThreadedFinished()
     LOG_JOHN() << "Emitted Update";
     progressBar->setText("Finished");
 }
-
+*/

@@ -16,7 +16,6 @@
 #include "analyzer\linkerwindow.h"
 #include "analyzer\imagewindow.h"
 #include "analyzer\videowindow.h"
-#include "events.h"
 
 namespace Ui {
 class MainWindow;
@@ -25,7 +24,6 @@ class MainWindow;
 //this contains one node editor file
 struct NodeEditorContainer{
     FilterNode* editor;
-    Events* events;
     QString name;
     QString fileName;
     int index;

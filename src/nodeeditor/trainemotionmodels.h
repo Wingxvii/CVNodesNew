@@ -1,6 +1,6 @@
 #ifndef TRAINMOTIONMODELS_H
 #define TRAINMOTIONMODELS_H
-
+/*
 #include <QtCore/QObject>
 #include <QtWidgets/QLineEdit>
 #include <QComboBox>
@@ -119,5 +119,5 @@ public:
     vector<int> trainingLabels, testingLabels;
 
 };
-
+*/
 #endif // TRAINMOTIONMODELS_H

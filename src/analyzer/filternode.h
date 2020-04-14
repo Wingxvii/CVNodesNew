@@ -10,7 +10,6 @@
 #include <nodes/TypeConverter>
 #include <nodes/DataModelRegistry>
 #include <nodes/NodeDataModel>
-#include "events.h"
 
 using QtNodes::NodeDataModel;
 using QtNodes::DataModelRegistry;
@@ -24,7 +23,7 @@ class FilterNode : public QWidget
 {
     Q_OBJECT
 public:
-    FilterNode(Events* events, QWidget* parent = 0);
+    FilterNode(QWidget* parent = 0);
     ~FilterNode();
 
     QHBoxLayout *layout;
@@ -42,7 +41,6 @@ private:
     std::shared_ptr<DataModelRegistry> outputSensor;
     std::shared_ptr<DataModelRegistry> final;
 
-    Events* events;
     int currentIndex;
     int index;
 

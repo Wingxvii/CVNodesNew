@@ -34,6 +34,26 @@ MainWindow::MainWindow(QWidget *parent) :
 
     refreshSize = 200;
 
+    QApplication::setStyle("Fusion");
+    QPalette palette;
+    palette.setColor(QPalette::Window, QColor(50,50,50));
+    palette.setColor(QPalette::WindowText, QColor(220,220,220));
+    palette.setColor(QPalette::Base, QColor(30,30,30));
+    palette.setColor(QPalette::AlternateBase, QColor(40,40,40));
+    palette.setColor(QPalette::Highlight, QColor(23,92,118));
+    palette.setColor(QPalette::HighlightedText, Qt::white);
+    palette.setColor(QPalette::ToolTipBase, palette.color(QPalette::Highlight));
+    palette.setColor(QPalette::ToolTipText, palette.color(QPalette::WindowText));
+    palette.setColor(QPalette::Text, palette.color(QPalette::WindowText));
+    palette.setColor(QPalette::BrightText, Qt::red);
+    palette.setColor(QPalette::Button, palette.color(QPalette::Window));
+    palette.setColor(QPalette::ButtonText, palette.color(QPalette::WindowText));
+    palette.setColor(QPalette::Link, palette.color(QPalette::Highlight).lighter());
+    palette.setColor(QPalette::LinkVisited, palette.color(QPalette::Highlight));
+    QApplication::setPalette(palette);
+    QIcon::setThemeName("dark");
+
+
 
 }
 

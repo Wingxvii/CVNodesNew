@@ -17,7 +17,6 @@ SOURCES += main.cpp\
     mainwindow.cpp \
     analyzer/filternode.cpp \
     nodeeditor/calibrate.cpp \
-    nodeeditor/example.cpp \
     nodeeditor/getcorners.cpp \
     nodeeditor/calibinfo.cpp \
     nodeeditor/frameiterator.cpp \
@@ -96,7 +95,6 @@ HEADERS  += mainwindow.h \
     nodeeditor/autoframeiterator.h \
     nodeeditor/calibinfo.h \
     nodeeditor/calibrate.h \
-    nodeeditor/example.h \
     nodeeditor/frameiterator.h \
     nodeeditor/getcorners.h \
     nodeeditor/imagedisplay.h \

@@ -23,7 +23,7 @@ NodeStyle()
   // order fiasco: https://isocpp.org/wiki/faq/ctors#static-init-order
   initResources();
 
-  loadJsonFile("C:/projects/Shotcut/src/shotcut/src/nodeeditor/dynamic_framework/resources/DefaultStyle.json");
+  loadJsonFile("D:/Qt/Projects/CVNodesNew/src/nodeeditor/dynamic_framework/resources/DefaultStyle.json");
 }
 
 

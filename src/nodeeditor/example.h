@@ -1,34 +1,31 @@
 #ifndef EXAMPLE_H
 #define EXAMPLE_H
 
-#include <QtCore/QObject>
-
-#include <nodes/NodeDataModel>
-#include "analyzer/graphdataconnector.h"
-#include "DataTypes/pointsdata.h"
-#include "DataTypes/imagedata.h"
-#include "DataTypes/calibdata.h"
-#include <QtConcurrent/QtConcurrent>
-
 #include <iostream>
-#include <QLabel>
-#include <QPushButton>
-#include <QLineEdit>
-#include <QProgressBar>
-#include <QGridLayout>
+#include <QtCore/QObject>                                       //1. Add Qt Object
+#include <QtConcurrent/QtConcurrent>                            //
 
-using QtNodes::PortType;
-using QtNodes::PortIndex;
-using QtNodes::NodeData;
-using QtNodes::NodeDataType;
-using QtNodes::NodeDataModel;
-using QtNodes::NodeValidationState;
+#include "analyzer/graphdataconnector.h"                        //2. Add Graph Dependencies
 
-class Example : public NodeDataModel{
-Q_OBJECT
+#include <nodes/NodeDataModel>                                  //3. Add Node Datatypes
+#include "DataTypes/imagedata.h"                                //
+
+
+#include <QLabel>                                               //4. Add Qt Widgets
+#include <QPushButton>                                          //
+
+using QtNodes::PortType;                                        //5. Add Node Dependencies
+using QtNodes::PortIndex;                                       //
+using QtNodes::NodeData;                                        //
+using QtNodes::NodeDataType;                                    //
+using QtNodes::NodeDataModel;                                   //
+using QtNodes::NodeValidationState;                             //
+
+class Example : public NodeDataModel{                           //6. Init Class as a QObject
+Q_OBJECT                                                        //
 public:
-    Example();
-    virtual ~Example() {}
+    Example();                                                  //Constructor
+    virtual ~Example() {}                                       //Virtual Destructor
 
     QString caption() const override{
         return QStringLiteral("Calibrate Camera");

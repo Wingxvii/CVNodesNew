@@ -7,7 +7,6 @@
 #include <QtCore/QJsonObject>
 #include <QtCore/QJsonValueRef>
 #include <QtCore/QJsonArray>
-
 #include <QDebug>
 
 #include "StyleCollection.hpp"
@@ -24,7 +23,8 @@ ConnectionStyle()
   initResources();
 
   // This configuration is stored inside the compiled unit and is loaded statically
-  loadJsonFile("C:/projects/Shotcut/src/shotcut/src/nodeeditor/dynamic_framework/resources/DefaultStyle.json");
+
+  loadJsonFile("D:/Qt/Projects/CVNodesNew/src/nodeeditor/dynamic_framework/resources/DefaultStyle.json");
 }
 
 
